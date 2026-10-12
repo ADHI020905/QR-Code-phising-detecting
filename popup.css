@@ -1,0 +1,138 @@
+/* ===== Global Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Popup Base ===== */
+body {
+  width: 320px;
+  padding: 16px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: radial-gradient(circle at top, #0f3460, #020024);
+  color: #e0f7fa;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  animation: cyberFade 0.5s ease-out;
+}
+
+/* ===== Entry Animation ===== */
+@keyframes cyberFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== Title ===== */
+h3 {
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  color: #00fff0;
+  text-shadow: 0 0 6px rgba(0, 255, 240, 0.8);
+}
+
+/* ===== Input Fields ===== */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #e0f7fa;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input::placeholder {
+  color: rgba(224, 247, 250, 0.5);
+}
+
+input:focus {
+  border-color: #00fff0;
+  box-shadow: 0 0 8px rgba(0, 255, 240, 0.7);
+}
+
+/* ===== Button ===== */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #000;
+  background: linear-gradient(135deg, #00fff0, #00bcd4);
+  box-shadow: 0 0 10px rgba(0, 255, 240, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 0 16px rgba(0, 255, 240, 0.9);
+}
+
+/* ===== Result Box ===== */
+#result {
+  margin-top: 12px;
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Safe Result ===== */
+.safe {
+  color: #00ff9c;
+  background: rgba(0, 255, 156, 0.15);
+  border: 1px solid rgba(0, 255, 156, 0.4);
+  box-shadow: 0 0 10px rgba(0, 255, 156, 0.4);
+}
+
+/* ===== Warning Result ===== */
+.warning {
+  color: #ff4b5c;
+  background: rgba(255, 75, 92, 0.15);
+  border: 1px solid rgba(255, 75, 92, 0.4);
+  box-shadow: 0 0 12px rgba(255, 75, 92, 0.6);
+  animation: dangerPulse 1s infinite alternate;
+}
+
+/* ===== Danger Pulse Animation ===== */
+@keyframes dangerPulse {
+  from {
+    box-shadow: 0 0 8px rgba(255, 75, 92, 0.4);
+  }
+  to {
+    box-shadow: 0 0 16px rgba(255, 75, 92, 0.9);
+  }
+}
+
+/* ===== Subtle Scan Line Effect ===== */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+}
